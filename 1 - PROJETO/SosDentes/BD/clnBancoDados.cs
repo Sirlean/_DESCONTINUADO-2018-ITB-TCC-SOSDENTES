@@ -12,8 +12,9 @@ namespace SosDentes.BD
     {
         public static SqlConnection AbreBanco()
         {
-            string StringConexao = "Data Source=DESKTOP-BN49EH2\\SQLEXPRESS;Initial Catalog=SOS_DENTES;Integrated Security=True";
-            
+            // string StringConexao = "Data Source=DESKTOP-BN49EH2\\SQLEXPRESS;Initial Catalog=SOS_DENTES;Integrated Security=True";
+            string StringConexao = "Data Source=NOTE-BETO-2018\\SQLEXPRESS;Initial Catalog=SOS_DENTES;Integrated Security=True";
+
             try
             {
                 SqlConnection conn = new SqlConnection(StringConexao);

@@ -131,7 +131,7 @@
             // maskedTextBoxTelFixo
             // 
             this.maskedTextBoxTelFixo.Location = new System.Drawing.Point(69, 20);
-            this.maskedTextBoxTelFixo.Mask = "00 00000-0000";
+            this.maskedTextBoxTelFixo.Mask = "00 0000-0000";
             this.maskedTextBoxTelFixo.Name = "maskedTextBoxTelFixo";
             this.maskedTextBoxTelFixo.Size = new System.Drawing.Size(110, 25);
             this.maskedTextBoxTelFixo.TabIndex = 18;
@@ -352,7 +352,7 @@
             // 
             this.maskedTextBoxRG.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxRG.Location = new System.Drawing.Point(544, 29);
-            this.maskedTextBoxRG.Mask = "00.000.000.00";
+            this.maskedTextBoxRG.Mask = "00,000000,00";
             this.maskedTextBoxRG.Name = "maskedTextBoxRG";
             this.maskedTextBoxRG.Size = new System.Drawing.Size(113, 22);
             this.maskedTextBoxRG.TabIndex = 5;
@@ -404,7 +404,7 @@
             // 
             this.maskedTextBoxCpf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxCpf.Location = new System.Drawing.Point(405, 68);
-            this.maskedTextBoxCpf.Mask = "000.000.000-00";
+            this.maskedTextBoxCpf.Mask = "000,000,000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(92, 22);
             this.maskedTextBoxCpf.TabIndex = 42;

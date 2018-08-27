@@ -27,9 +27,19 @@ namespace SosDentes.Telas
         {
             if ((txtNome.Text == "") || (maskedTextBoxTelCelular.Text == "") || (txtNumerodaCasa.Text == "") || (maskedTextBoxCep.Text == "") ||
                (txtRua.Text == "") || (cboUF.Text == "") || (txtBairro.Text == "") || (txtCidade.Text == "") || (txtEmail.Text == "") || (maskedTextBoxCpf.Text == "") || (maskedTextBoxRG.Text == "") ||
-                     (cboSexo.Text == "") || (txtCidade.Text == ""))
+                     (cboSexo.Text == "") || (txtCidade.Text == "") || (clnUtil.ValidaCpf(maskedTextBoxCpf.Text) == false))
             {
-                MessageBox.Show("Os campos com * são Obrigatórios", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (clnUtil.ValidaCpf(maskedTextBoxCpf.Text)==false)
+                {
+                    MessageBox.Show("CPF Inválido", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Os campos com * são Obrigatórios", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
             }
             else
             {

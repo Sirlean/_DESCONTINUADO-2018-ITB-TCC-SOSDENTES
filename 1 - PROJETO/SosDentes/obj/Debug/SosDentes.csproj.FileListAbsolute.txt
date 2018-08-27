@@ -42,3 +42,25 @@ D:\21\14_06_2018\SosDentes\SosDentes\obj\Debug\SosDentes.exe
 D:\21\14_06_2018\SosDentes\SosDentes\obj\Debug\SosDentes.pdb
 D:\21\14_06_2018\SosDentes\SosDentes\obj\Debug\SosDentes.Login.frmCadastrar.resources
 D:\21\14_06_2018\SosDentes\SosDentes\obj\Debug\SosDentes.Telas.frmConsultarAgendamento.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\bin\Debug\SosDentes.exe.config
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\bin\Debug\SosDentes.exe
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\bin\Debug\SosDentes.pdb
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.csprojResolveAssemblyReference.cache
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Login.frmCadastrar.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmAgenda.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmCadPaciente.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmConsultarAgendamento.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmPesquisarPacientes.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmCadFuncionario.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmFormaPagamento.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmFuncionario.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.frmLogin.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Properties.Resources.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmMessageBoxAviso.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmPaciente.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmPagamento.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.Telas.frmPrincipal.resources
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.csproj.GenerateResource.cache
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.csproj.CoreCompileInputs.cache
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.exe
+D:\sirlean\2018-ITB-TCC-SOSDENTES\1 - PROJETO\SosDentes\obj\Debug\SosDentes.pdb

@@ -33,7 +33,7 @@ namespace SosDentes
 
         public DataTable PreencherTipoServico()
         {
-            comando = "Select id_servico, Des_servico from Tipo_Servico";
+            comando = "Select id_servico, Des_servico, Tempo_Atendimento from Tipo_Servico";
             return ObjbancoDados.RetornaTabela(comando);
         }
 
@@ -65,7 +65,7 @@ namespace SosDentes
             return false;
         }
 
-        /* public bool ValidaCpf()
+        public  static bool ValidaCpf( string Cpf)
         {
 
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -76,14 +76,14 @@ namespace SosDentes
             int soma;
             int resto;
 
-            _cpf = _cpf.Trim();
-            _cpf = _cpf.Replace(".", "").Replace("-", "");
+            Cpf = Cpf.Trim();
+            Cpf = Cpf.Replace(".", "").Replace("-", "");
 
-            if (_cpf.Length != 11)
+            if (Cpf.Length != 11)
             {
                 return false;
             }
-            tempCpf = _cpf.Substring(0, 9);
+            tempCpf = Cpf.Substring(0, 9);
 
             soma = 0;
 
@@ -123,7 +123,7 @@ namespace SosDentes
             }
 
             digito = digito + resto.ToString();
-            return _cpf.EndsWith(digito);
-        } */
+            return Cpf.EndsWith(digito);
+        } 
     }
 }

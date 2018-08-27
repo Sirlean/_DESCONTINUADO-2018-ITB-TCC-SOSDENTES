@@ -1,0 +1,57 @@
+Revisão - GITHUB
+--------------------------------------------------------------------------------------------
+PASSO 1
+- ACESSAR O SITE https://github.com
+
+PASSO 2
+-CRIAR REPOSITORIO
+
+PASSO 3
+-CLONAR REPOSITORIO
+-USAR VISUAL STUDIO OU GITHUB DESKTOP https://desktop.github.com/
+
+PASSO 3.1 (NO VISUAL STUDIO)
+- ABRIR MENU EQUIPE / TEAM E CLICAR EM GERENCIAR CONEXOES 
+- CONECTAR CONTA DO GITHUB
+- CLONAR REPOSITORIO (CRIANDO PASTA LOCAL)
+- NO PRIMEIRO VERSIONAMENTO DO GITHUB, COLOCAR TODO O CONTEUDO DO PROJETO DENTRO DO DIRETORIO DO REPOSITORIO
+- NO VISUAL STUDIO FAZER COMMIT 
+
+----------------------------------------------------------------------------------------------
+REVISÃO + NOVIDADES - SQL SERVER
+
+- EXEMPLO DE CRIAÇÃO DE VIEW (+INNER JOIN)
+- FUNÇÃO CONVERT E CAST NO SQL SERVER
+-- UTILIZADO O CODIGO DE PADRAO 103 (ARGUMENTO DO CONVERT) - https://docs.microsoft.com/pt-br/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-2017
+- REVISÃO DE UPDATE E ALTER TABLE
+- UTILIZANDO BETWEEN NO WHERE DE UMA CONSULTA
+- UTILIZADO FORMATO DE DADOS TIME - Tempo_Atendimento time not null default('01:00:00')
+
+----------------------------------------------------------------------------------------------
+REVISÃO + NOVIDADES
+- PASSAR ARGUMENTO/PARAMETRO EM MÉTODO - EX: 
+
+	public bool ValidarDataAgendamento(string DataInicio, string DataFim, string idDentista)
+	{
+		comando = " Select * from view_agendamento ";
+		comando += " where ( id_dentista = '" + idDentista + "' and DataFim <> '" + DataInicio + "' and '" + DataInicio + "' between DataInicio and DataFim ) ";
+		comando += " or ( id_dentista = '" + idDentista + "' and DataInicio <> '" + DataFim + "' and '" + DataFim + "' between DataInicio and DataFim ) ";
+		DataTable dados = ObjBancoDados.RetornaTabela(comando);
+		return dados.Rows.Count > 0;
+	}
+
+- PROPRIEDADE ROWS DO DATATABLE (NUMERO DE LINHAS EM UM DATATABLE)
+- CONVERTER UM ITEM SELECIONADO PARA DATAROWVIEW PARA PEGAR VALORES PRESENTES NO CAMPO SELECIONADO - EX:
+	((DataRowView)comboBox2.SelectedItem)["id_servico"].ToString()
+- TIPO TIMESPAN SERVE PARA ARMAZENAMENTO DE DATA. EX:
+
+	TimeSpan tempoAtendimento = (TimeSpan)((DataRowView)comboBox2.SelectedItem)["Tempo_Atendimento"];
+
+- TIPO TIMESPAN POSSUI UM METODO PARSE QUE SERVE PARA CONVERTER UMA STRING EM UM TIMESPAN - EX:
+	TimeSpan parteHorario = TimeSpan.Parse(comboBox4.Text);
+    string dataFim = dateTimePicker1.Text + " " + tempoAtendimento.Add(parteHorario).ToString();
+
+- IMPLEMENTAÇÃO DE MÉTODO DE VALIDAÇÃO DE CPF
+
+- MODIFICANDO GRIDVIEW (OCULTANDO COLUNAS E MUDANDO CABEÇALHO)
+

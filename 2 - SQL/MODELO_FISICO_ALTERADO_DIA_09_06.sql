@@ -35,15 +35,16 @@ CREATE TABLE Tratamento (
 id_tratamento INTEGER NOT NULL IDENTITY (1,1) PRIMARY KEY,
 id_paciente int not null,
 id_servico_FK INTEGER NOT NULL,
-data VARCHAR(12) NOT NULL,
-hora VARCHAR(12) NOT NULL,
+--data VARCHAR(12) NOT NULL,
+--hora VARCHAR(12) NOT NULL,
+Data datetime not null,
 status VARCHAR(100) NOT NULL CHECK (STATUS IN ('Agendado', 'Concluído', 'Cancelado')),
 id_dentista INTEGER NOT NULL,
 FOREIGN KEY(id_dentista) REFERENCES Funcionario (id_funcionario),
 foreign key (id_paciente) references paciente (id_paciente)
 )
 
-
+--drop table Tratamento
 
 CREATE TABLE Paciente (
 id_Paciente INTEGER NOT NULL IDENTITY (1,1)PRIMARY KEY,
@@ -92,17 +93,28 @@ FOREIGN KEY(id_forma_FK) REFERENCES Forma_Pag (id_forma),
 CREATE TABLE Tipo_Servico (
 id_servico INTEGER NOT NULL IDENTITY(1,1)PRIMARY KEY,
 Des_servico VARCHAR(150) NOT NULL,
-valor DECIMAL(15,2) NOT NULL
+valor DECIMAL(15,2) NOT NULL,
+Tempo_Atendimento time not null default('01:00:00')
 )
+---alter table Tipo_Servico add Tempo_Atendimento time not null default('01:00:00')
 
-insert into Tipo_Servico (Des_servico, valor)
-values ('Restauração',150.00);
-insert into Tipo_Servico (Des_servico, valor)
-values ('Limpeza',150.00);
-insert into Tipo_Servico (Des_servico, valor)
-values ('Extração',150.00);
-insert into Tipo_Servico (Des_servico, valor)
-values ('Canal',150.00);
+
+
+
+insert into Tipo_Servico (Des_servico, valor, Tempo_Atendimento)
+values ('Restauração',150.00, '02:00:00');
+insert into Tipo_Servico (Des_servico, valor, Tempo_Atendimento)
+values ('Limpeza',150.00, '01:00:00');
+insert into Tipo_Servico (Des_servico, valor, Tempo_Atendimento)
+values ('Extração',150.00,'03:00:00');
+insert into Tipo_Servico (Des_servico, valor, Tempo_Atendimento)
+values ('Canal',150.00,'03:00:00');
+
+update Tipo_Servico set Tempo_Atendimento = '02:00:00' where id_servico = 1
+update Tipo_Servico set Tempo_Atendimento = '01:00:00' where id_servico = 2
+update Tipo_Servico set Tempo_Atendimento = '03:00:00' where id_servico = 3
+update Tipo_Servico set Tempo_Atendimento = '03:00:00' where id_servico = 4
+
 
 select * from Tipo_Servico 
 

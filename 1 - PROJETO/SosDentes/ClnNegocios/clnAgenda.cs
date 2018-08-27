@@ -14,8 +14,7 @@ namespace SosDentes.ClnNegocios
         private string _nome, _procedimento, _especialista, _data, _hora;
         string comando;
         clnBancoDados ObjBancoDados = new clnBancoDados();
-       
-      
+
         private string _status;
         public string Nome { get => _nome; set => _nome = value; }
         public string Procedimento { get => _procedimento; set => _procedimento = value; }
@@ -45,7 +44,8 @@ namespace SosDentes.ClnNegocios
 
         public DataTable RetornaAgendamento()
         {
-            comando = "select p.Nome,f.Nome,tipo.Des_servico,t.data,t.hora,t.status FROM tratamento t, paciente p, dentista_servico d, Funcionario f, Tipo_Servico tipo WHERE t.id_paciente = p.id_paciente and f.id_funcionario = d.id_dentista";
+            //comando = "select p.Nome,f.Nome,tipo.Des_servico,t.data,t.hora,t.status FROM tratamento t, paciente p, dentista_servico d, Funcionario f, Tipo_Servico tipo WHERE t.id_paciente = p.id_paciente and f.id_funcionario = d.id_dentista";
+            comando = "select * FROM view_agendamento";
             return ObjBancoDados.RetornaTabela(comando);
         }
 
@@ -62,12 +62,22 @@ namespace SosDentes.ClnNegocios
             comando += ("VALUES(");
             comando += "'" + _nome + "',";
             comando += "'" + _procedimento + "',";
-            comando += "'" + _data + "',";
-            comando += "'" + _hora + "',";
+            //comando += "'" + _data + "',";
+            //comando += "'" + _hora + "',";
+            comando += "convert(datetime, '" + _data + " " + _hora + "', 103), ";
             comando += "'" + Status + "',";
             comando += "'" + _especialista + "'";
             comando += (")");
             ObjBancoDados.ExecutaComando(comando);
+
+        }
+        public bool ValidarDataAgendamento(string DataInicio, string DataFim, string idDentista)
+        {
+            comando = " Select * from view_agendamento ";
+            comando += " where ( id_dentista = '" + idDentista + "' and DataFim <> '" + DataInicio + "' and '" + DataInicio + "' between DataInicio and DataFim ) ";
+            comando += " or ( id_dentista = '" + idDentista + "' and DataInicio <> '" + DataFim + "' and '" + DataFim + "' between DataInicio and DataFim ) ";
+            DataTable dados = ObjBancoDados.RetornaTabela(comando);
+            return dados.Rows.Count > 0;
         }
     }
 }
