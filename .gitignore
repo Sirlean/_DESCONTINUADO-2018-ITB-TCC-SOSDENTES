@@ -3,3 +3,6 @@
 ################################################################################
 
 /1 - PROJETO/.vs/SosDentes/v15/Server/sqlite3
+/.vs
+/1 - PROJETO/SosDentes/obj/Debug
+/1 - PROJETO/SosDentes/obj/Release
