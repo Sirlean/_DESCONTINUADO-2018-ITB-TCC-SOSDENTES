@@ -87,9 +87,7 @@
     <Compile Include="Telas\frmCadFuncionario.Designer.cs">
       <DependentUpon>frmCadFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\frmFormaPagamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Telas\frmFormaPagamento.cs" />
     <Compile Include="Telas\frmFormaPagamento.Designer.cs">
       <DependentUpon>frmFormaPagamento.cs</DependentUpon>
     </Compile>
@@ -119,9 +117,7 @@
     <Compile Include="Telas\frmPaciente.Designer.cs">
       <DependentUpon>frmPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\frmPagamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Telas\frmPagamento.cs" />
     <Compile Include="Telas\frmPagamento.Designer.cs">
       <DependentUpon>frmPagamento.cs</DependentUpon>
     </Compile>

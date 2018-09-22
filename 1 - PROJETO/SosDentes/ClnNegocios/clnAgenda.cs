@@ -11,10 +11,13 @@ namespace SosDentes.ClnNegocios
 {
     class clnAgenda
     {
+       
+        private string _registro;
         private string _nome, _procedimento, _especialista, _data, _hora;
         string comando;
         clnBancoDados ObjBancoDados = new clnBancoDados();
-
+       
+      
         private string _status;
         public string Nome { get => _nome; set => _nome = value; }
         public string Procedimento { get => _procedimento; set => _procedimento = value; }
@@ -35,6 +38,7 @@ namespace SosDentes.ClnNegocios
 
         public string Hora { get => _hora; set => _hora = value; }
         public string Status { get => _status; set => _status = value; }
+        public string Registro { get => _registro; set => _registro = value; }
 
         public DataTable LocalizarPorNome(string strDescicao)
         {
@@ -42,15 +46,17 @@ namespace SosDentes.ClnNegocios
             return ObjBancoDados.RetornaTabela(comando);
         }
 
-        public DataTable RetornaAgendamento()
+        public DataTable RetornaAgendamento(string strDescricao)
         {
-            //comando = "select p.Nome,f.Nome,tipo.Des_servico,t.data,t.hora,t.status FROM tratamento t, paciente p, dentista_servico d, Funcionario f, Tipo_Servico tipo WHERE t.id_paciente = p.id_paciente and f.id_funcionario = d.id_dentista";
-            comando = "select * FROM view_agendamento";
+            comando = "select Tratamento.id_Tratamento, Paciente.Nome, Funcionario.Nome, Tipo_Servico.Des_servico, Tratamento.data, Tratamento.hora, Tratamento.status from Tratamento inner join Paciente on Paciente.id_Paciente = Tratamento.id_paciente inner join Funcionario on Funcionario.id_funcionario = Tratamento.id_dentista inner join Tipo_Servico on Tipo_Servico.id_servico = Tratamento.id_servico_FK Where Paciente.Nome like '%" + strDescricao + "%' order by id_tratamento";
             return ObjBancoDados.RetornaTabela(comando);
         }
 
-
-
+        //public DataTable RetornaAgendamento()
+        //{
+        //    comando = "select Tratamento.id_Tratamento, Paciente.Nome, Funcionario.Nome, Tipo_Servico.Des_servico, Tratamento.data, Tratamento.hora, Tratamento.status from Tratamento inner join Paciente on Paciente.id_Paciente = Tratamento.id_paciente inner join Funcionario on Funcionario.id_funcionario = Tratamento.id_dentista inner join Tipo_Servico on Tipo_Servico.id_servico = Tratamento.id_servico_FK ";
+        //    return ObjBancoDados.RetornaTabela(comando);
+        //}
         internal object LocalizarPorNome(object text)
         {
             throw new NotImplementedException();
@@ -62,22 +68,32 @@ namespace SosDentes.ClnNegocios
             comando += ("VALUES(");
             comando += "'" + _nome + "',";
             comando += "'" + _procedimento + "',";
-            //comando += "'" + _data + "',";
-            //comando += "'" + _hora + "',";
-            comando += "convert(datetime, '" + _data + " " + _hora + "', 103), ";
+            comando += "'" + _data + "',";
+            comando += "'" + _hora + "',";
             comando += "'" + Status + "',";
             comando += "'" + _especialista + "'";
+            comando += ("'1'");
             comando += (")");
             ObjBancoDados.ExecutaComando(comando);
-
         }
-        public bool ValidarDataAgendamento(string DataInicio, string DataFim, string idDentista)
+   
+        public void ExcluirLogicamente()
         {
-            comando = " Select * from view_agendamento ";
-            comando += " where ( id_dentista = '" + idDentista + "' and DataFim <> '" + DataInicio + "' and '" + DataInicio + "' between DataInicio and DataFim ) ";
-            comando += " or ( id_dentista = '" + idDentista + "' and DataInicio <> '" + DataFim + "' and '" + DataFim + "' between DataInicio and DataFim ) ";
-            DataTable dados = ObjBancoDados.RetornaTabela(comando);
-            return dados.Rows.Count > 0;
+            comando = ("UPDATE Tratamento ");
+            comando += ("SET ");
+            comando += ("Ativo = '" + 0 + " ' ");
+            comando += ("WHERE ");
+            comando += ("id_tratamento = ' " + _registro + "'");
+            ObjBancoDados.ExecutaComando(comando);
         }
     }
 }
+//public void ExcluirLogicamente()
+//{
+//    comando = ("UPDATE paciente ");
+//    comando += ("SET ");
+//    comando += ("Ativo = '" + 0 + " ' ");
+//    comando += ("WHERE ");
+//    comando += ("id_Paciente = ' " + _registro + "'");
+//    ObjBancoDados.ExecutaComando(comando);
+//}

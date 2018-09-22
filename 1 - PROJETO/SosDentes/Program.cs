@@ -17,7 +17,12 @@ namespace SosDentes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+#if DEBUG
+            Application.Run(new frmPrincipal());
+#else
             Application.Run(new frmLogin());
+#endif
         }
     }
 }

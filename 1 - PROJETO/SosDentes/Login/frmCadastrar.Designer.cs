@@ -33,8 +33,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -97,22 +95,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(26, 28);
             this.panel4.TabIndex = 33;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(26, 28);
-            this.panel3.TabIndex = 31;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.panel2.Location = new System.Drawing.Point(476, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(26, 28);
-            this.panel2.TabIndex = 32;
             // 
             // panel1
             // 
@@ -200,17 +182,14 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picLogo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadastrar";
-            this.Text = "Cadastrar";
+            this.Text = ">>> Cadastro de Login de Funcionário <<<";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
@@ -223,8 +202,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtUsuario;

@@ -27,20 +27,11 @@ namespace SosDentes.Telas
         {
             if ((txtNome.Text == "") || (maskedTextBoxTelCelular.Text == "") || (txtNumerodaCasa.Text == "") || (maskedTextBoxCep.Text == "") ||
                (txtRua.Text == "") || (cboUF.Text == "") || (txtBairro.Text == "") || (txtCidade.Text == "") || (txtEmail.Text == "") || (maskedTextBoxCpf.Text == "") || (maskedTextBoxRG.Text == "") ||
-                     (cboSexo.Text == "") || (txtCidade.Text == "") || (clnUtil.ValidaCpf(maskedTextBoxCpf.Text) == false))
+                     (cboSexo.Text == "") || (txtCidade.Text == ""))
             {
-                if (clnUtil.ValidaCpf(maskedTextBoxCpf.Text)==false)
-                {
-                    MessageBox.Show("CPF Inválido", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                else
-                {
-                    MessageBox.Show("Os campos com * são Obrigatórios", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-
+                MessageBox.Show("Os campos com * são Obrigatórios", "Item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
             else
             {
                 ObjClnPaciente.Nome = txtNome.Text;
@@ -60,6 +51,7 @@ namespace SosDentes.Telas
                 ObjClnPaciente.Cidade = txtCidade.Text;
                 ObjClnPaciente.Observacao = txtObservacao.Text;
 
+
                 if (txtRegistro.Text == "")
                 {
                     ObjClnPaciente.Gravar();
@@ -77,6 +69,7 @@ namespace SosDentes.Telas
 
             }
         }
+
 
         private void frmCadPaciente_Load(object sender, EventArgs e)
         {
@@ -166,5 +159,22 @@ namespace SosDentes.Telas
                 }
             }
         }
+
+        private void maskedTextBoxCpf_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+     
+                    if (clnUtil.ValidaCpf(maskedTextBoxCpf.Text) == false)
+                    {
+                        MessageBox.Show("CPF INVÁLIDO DIGITE NOVAMENTE", "Erro Inesperado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("CPF INFORMADO É VÁLIDO! POR FAVOR, CONTINUE O CADASTRO!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
     }
-}
+

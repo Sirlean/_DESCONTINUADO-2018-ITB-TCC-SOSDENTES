@@ -313,26 +313,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblEspe;
-        private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.Label lblProce;
-        private System.Windows.Forms.TextBox txtPesClien;
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAgendar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1Dia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1Hora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1Pro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comumn1Esp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboStatus;
+        public System.Windows.Forms.Button btnSair;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.Label lblEspe;
+        public System.Windows.Forms.DataGridView dgv;
+        public System.Windows.Forms.Label lblProce;
+        public System.Windows.Forms.TextBox txtPesClien;
+        public System.Windows.Forms.Label lblCliente;
+        public System.Windows.Forms.Button btnPesquisa;
+        public System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button btnAgendar;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column1Dia;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column1Hora;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column1Pro;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Comumn1Esp;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ComboBox cboStatus;
     }
 }

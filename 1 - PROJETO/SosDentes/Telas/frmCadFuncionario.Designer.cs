@@ -425,16 +425,16 @@
             // 
             this.maskedTextBoxCpf.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxCpf.Location = new System.Drawing.Point(404, 64);
-            this.maskedTextBoxCpf.Mask = "000.000.000-00";
+            this.maskedTextBoxCpf.Mask = "000,000,000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
-            this.maskedTextBoxCpf.Size = new System.Drawing.Size(155, 21);
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(140, 21);
             this.maskedTextBoxCpf.TabIndex = 46;
+            this.maskedTextBoxCpf.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBoxCpf_KeyDown);
             // 
             // maskedTextBoxRG
             // 
             this.maskedTextBoxRG.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxRG.Location = new System.Drawing.Point(607, 64);
-            this.maskedTextBoxRG.Mask = "00.000.000.0";
             this.maskedTextBoxRG.Name = "maskedTextBoxRG";
             this.maskedTextBoxRG.Size = new System.Drawing.Size(128, 21);
             this.maskedTextBoxRG.TabIndex = 45;

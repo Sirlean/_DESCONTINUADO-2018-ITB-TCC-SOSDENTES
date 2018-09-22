@@ -37,12 +37,10 @@
             this.menuAgendamento = new System.Windows.Forms.ToolStripMenuItem();
             this.pESQUISAPORAGENDAMENTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPag = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagamentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.formasDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuConsultas = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dentistaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -64,7 +62,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuCad,
             this.menuAgendamento,
-            this.menuPag,
             this.menuConsultas,
             this.menuLogin});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -133,34 +130,12 @@
             this.agendaToolStripMenuItem.Text = "Agenda";
             this.agendaToolStripMenuItem.Click += new System.EventHandler(this.agendaToolStripMenuItem_Click);
             // 
-            // menuPag
-            // 
-            this.menuPag.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pagamentoToolStripMenuItem1,
-            this.formasDePagamentoToolStripMenuItem});
-            this.menuPag.Name = "menuPag";
-            this.menuPag.Size = new System.Drawing.Size(90, 20);
-            this.menuPag.Text = "PAGAMENTO";
-            // 
-            // pagamentoToolStripMenuItem1
-            // 
-            this.pagamentoToolStripMenuItem1.Name = "pagamentoToolStripMenuItem1";
-            this.pagamentoToolStripMenuItem1.Size = new System.Drawing.Size(193, 22);
-            this.pagamentoToolStripMenuItem1.Text = "Pagamento";
-            this.pagamentoToolStripMenuItem1.Click += new System.EventHandler(this.pagamentoToolStripMenuItem1_Click);
-            // 
-            // formasDePagamentoToolStripMenuItem
-            // 
-            this.formasDePagamentoToolStripMenuItem.Name = "formasDePagamentoToolStripMenuItem";
-            this.formasDePagamentoToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.formasDePagamentoToolStripMenuItem.Text = "Formas de Pagamento";
-            this.formasDePagamentoToolStripMenuItem.Click += new System.EventHandler(this.formasDePagamentoToolStripMenuItem_Click);
-            // 
             // menuConsultas
             // 
             this.menuConsultas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacienteToolStripMenuItem1,
-            this.funcionarioToolStripMenuItem});
+            this.funcionarioToolStripMenuItem,
+            this.dentistaToolStripMenuItem1});
             this.menuConsultas.Name = "menuConsultas";
             this.menuConsultas.Size = new System.Drawing.Size(84, 20);
             this.menuConsultas.Text = "CONSULTAS";
@@ -168,16 +143,23 @@
             // pacienteToolStripMenuItem1
             // 
             this.pacienteToolStripMenuItem1.Name = "pacienteToolStripMenuItem1";
-            this.pacienteToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.pacienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.pacienteToolStripMenuItem1.Text = "Paciente";
             this.pacienteToolStripMenuItem1.Click += new System.EventHandler(this.pacienteToolStripMenuItem1_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.funcionarioToolStripMenuItem.Text = "Funcionario";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
+            // 
+            // dentistaToolStripMenuItem1
+            // 
+            this.dentistaToolStripMenuItem1.Name = "dentistaToolStripMenuItem1";
+            this.dentistaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dentistaToolStripMenuItem1.Text = "Especialidade";
+            this.dentistaToolStripMenuItem1.Click += new System.EventHandler(this.dentistaToolStripMenuItem1_Click);
             // 
             // menuLogin
             // 
@@ -285,9 +267,6 @@
         public System.Windows.Forms.ToolStripMenuItem menuAgendamento;
         public System.Windows.Forms.ToolStripMenuItem pESQUISAPORAGENDAMENTOSToolStripMenuItem;
         public System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.ToolStripMenuItem menuPag;
-        public System.Windows.Forms.ToolStripMenuItem pagamentoToolStripMenuItem1;
-        public System.Windows.Forms.ToolStripMenuItem formasDePagamentoToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem menuConsultas;
         public System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem1;
         public System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
@@ -298,5 +277,6 @@
         public System.Windows.Forms.PictureBox agenda;
         public System.Windows.Forms.PictureBox agendamento;
         public System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dentistaToolStripMenuItem1;
     }
 }

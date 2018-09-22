@@ -41,19 +41,6 @@ namespace SosDentes.Telas
             frmAgenda abrir = new frmAgenda();
             abrir.ShowDialog();
         }
-
-        private void pagamentoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmPagamento abrir = new frmPagamento();
-            abrir.ShowDialog();
-        }
-
-        private void formasDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmFormaPagamento abrir = new frmFormaPagamento();
-            abrir.ShowDialog();
-        }
-
         private void pacienteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmPaciente abrir = new frmPaciente();
@@ -102,6 +89,12 @@ namespace SosDentes.Telas
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             frmConsultarAgendamento abrir = new frmConsultarAgendamento();
+            abrir.ShowDialog();
+        }
+
+        private void dentistaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            defenirEspecialidade  abrir = new defenirEspecialidade();
             abrir.ShowDialog();
         }
     }

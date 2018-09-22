@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.Linq; 
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,46 +35,27 @@ namespace SosDentes.Telas
             {
                 clnAgenda ObjAgenda = new clnAgenda();
                 SqlDataReader idServico;
-
-                ObjAgenda.Procedimento = ((DataRowView)comboBox2.SelectedItem)["id_servico"].ToString();
-                TimeSpan tempoAtendimento = (TimeSpan)((DataRowView)comboBox2.SelectedItem)["Tempo_Atendimento"];
-                //idServico = ObjAgenda.LocalizarServico(comboBox2.Text);
-                //idServico.Read();
-
-                //ObjAgenda.Procedimento = idServico["id_servico"].ToString();
-                //idServico.Read();
-                /// ObjAgenda.Nome  = idServico["id_paciente"].ToString();
+                idServico = ObjAgenda.LocalizarServico(comboBox2.Text);
+                idServico.Read();
+                ObjAgenda.Procedimento = idServico["id_servico"].ToString();
+                idServico.Read();
                 ObjAgenda.Nome = Temp2;
-
-                // ObjAgenda.Nome = texto;
-                //idServico.Read();
+                idServico.Read();
                 idServico = ObjAgenda.LocalizarEspecialista(comboBox1.Text);
                 idServico.Read();
                 string id_especialista = idServico["id_funcionario"].ToString();
                 ObjAgenda.Especialista = id_especialista;
-                // ObjAgenda.Hora = comboBox4.Text.Replace(":", "");
-                //string data = dateTimePicker1.Text.Replace("/", "");
+                ObjAgenda.Hora = comboBox4.Text.Replace(":", "");
+                string data = dateTimePicker1.Text.Replace("/", "");
                 ObjAgenda.Status = cboStatus.Text.ToString();
-                ObjAgenda.Data = dateTimePicker1.Text;
-                ObjAgenda.Hora = comboBox4.Text;
-
-                string dataInicio = dateTimePicker1.Text + " " + comboBox4.Text;
-                TimeSpan parteHorario = TimeSpan.Parse(comboBox4.Text);
-                string dataFim = dateTimePicker1.Text + " " + tempoAtendimento.Add(parteHorario).ToString();
-
-                if (ObjAgenda.ValidarDataAgendamento(dataInicio, dataFim, id_especialista) == false)
-                {
-                    ObjAgenda.GravaNoBanco();
-                    InsereAgendaGrid();
-                    MessageBox.Show("AGENDADO COM SUCESSO", "AGENDAMENTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("AGENDAMENTO NÃO REALIZADO. HORARIO NÃO DISPOÍVEL.", "AGENDAMENTO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                ObjAgenda.Data = data;
+                ObjAgenda.GravaNoBanco();
+                InsereAgendaGrid();
+                MessageBox.Show("AGENDADO COM SUCESSO", "AGENDAMENTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //CarregaDataGrid();
         }
+
 
         public void InsereAgendaGrid()
         {
@@ -98,7 +79,7 @@ namespace SosDentes.Telas
         {
             frmPesquisarPacientes abrir = new frmPesquisarPacientes();
             clnUtil.Temp = txtPesClien.Text;
-
+           
             abrir.ShowDialog();
 
             txtPesClien.Text = clnUtil.Temp;

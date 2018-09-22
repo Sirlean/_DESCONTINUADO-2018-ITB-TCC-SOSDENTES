@@ -50,7 +50,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnGravar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cboUF = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -131,7 +130,7 @@
             // maskedTextBoxTelFixo
             // 
             this.maskedTextBoxTelFixo.Location = new System.Drawing.Point(69, 20);
-            this.maskedTextBoxTelFixo.Mask = "00 0000-0000";
+            this.maskedTextBoxTelFixo.Mask = "00 00000-0000";
             this.maskedTextBoxTelFixo.Name = "maskedTextBoxTelFixo";
             this.maskedTextBoxTelFixo.Size = new System.Drawing.Size(110, 25);
             this.maskedTextBoxTelFixo.TabIndex = 18;
@@ -286,16 +285,6 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Tel. Fixo";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(73, 653);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(114, 16);
-            this.label18.TabIndex = 52;
-            this.label18.Text = "Cria Agendamento";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cboUF);
@@ -352,7 +341,6 @@
             // 
             this.maskedTextBoxRG.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxRG.Location = new System.Drawing.Point(544, 29);
-            this.maskedTextBoxRG.Mask = "00,000000,00";
             this.maskedTextBoxRG.Name = "maskedTextBoxRG";
             this.maskedTextBoxRG.Size = new System.Drawing.Size(113, 22);
             this.maskedTextBoxRG.TabIndex = 5;
@@ -408,6 +396,7 @@
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(92, 22);
             this.maskedTextBoxCpf.TabIndex = 42;
+            this.maskedTextBoxCpf.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.maskedTextBoxCpf_PreviewKeyDown);
             // 
             // label3
             // 
@@ -484,11 +473,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 659);
+            this.ClientSize = new System.Drawing.Size(764, 691);
             this.Controls.Add(this.txtObservacao);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.btnGravar);
-            this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cboSexo);
@@ -539,7 +527,6 @@
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.ComboBox cboUF;
         private System.Windows.Forms.GroupBox groupBox2;

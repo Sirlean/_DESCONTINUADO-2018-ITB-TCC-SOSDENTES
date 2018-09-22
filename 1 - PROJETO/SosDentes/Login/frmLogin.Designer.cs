@@ -43,7 +43,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNivel = new System.Windows.Forms.Label();
             this.cboNivel = new System.Windows.Forms.ComboBox();
-            this.btnAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -193,28 +192,13 @@
             this.cboNivel.Name = "cboNivel";
             this.cboNivel.Size = new System.Drawing.Size(259, 21);
             this.cboNivel.TabIndex = 23;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.ForeColor = System.Drawing.Color.GhostWhite;
-            this.btnAlterar.Location = new System.Drawing.Point(181, 510);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(137, 32);
-            this.btnAlterar.TabIndex = 24;
-            this.btnAlterar.Text = "ALTERAR SENHA ";
-            this.btnAlterar.UseVisualStyleBackColor = false;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.cboNivel.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cboNivel_PreviewKeyDown);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 561);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.cboNivel);
             this.Controls.Add(this.lblNivel);
             this.Controls.Add(this.pictureBox1);
@@ -255,7 +239,6 @@
         public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lblNivel;
         public System.Windows.Forms.ComboBox cboNivel;
-        public System.Windows.Forms.Button btnAlterar;
     }
 }
 

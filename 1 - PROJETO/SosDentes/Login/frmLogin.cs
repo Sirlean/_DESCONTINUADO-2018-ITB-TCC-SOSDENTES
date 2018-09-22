@@ -38,7 +38,7 @@ namespace SosDentes
                 {
                     frmPrincipal abrir = new frmPrincipal();
                     MessageBox.Show("LOGADO COM SUCESSO","DADOS VÁLIDOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    abrir.menuPag.Visible = false;
+                 
                     abrir.Hide();
                     abrir.ShowDialog();
                     Close();
@@ -49,7 +49,7 @@ namespace SosDentes
                     frmPrincipal abrir = new frmPrincipal();
                     MessageBox.Show("LOGADO COM SUCESSO", "DADOS VÁLIDOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     abrir.menuCad.Visible = false;
-                    abrir.menuPag.Visible = false;
+                 
                     abrir.menuConsultas.Visible = false;
                     abrir.menuLogin.Visible = false;
                     abrir.paciente.Enabled = false;
@@ -89,9 +89,12 @@ namespace SosDentes
             txtSenha.PasswordChar = '*';
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
+        private void cboNivel_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-    
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEntrar_Click(sender, e);
+            }
         }
     }
 }

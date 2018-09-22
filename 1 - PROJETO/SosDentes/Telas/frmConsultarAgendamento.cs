@@ -8,43 +8,93 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SosDentes.Telas
 {
     public partial class frmConsultarAgendamento : Form
     {
         clnAgenda ObjAgenda = new clnAgenda();
+     
+
         public frmConsultarAgendamento()
         {
             InitializeComponent();
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+
+        public void CarregaDataGrid()
+        {
+            dgv.DataSource = ObjAgenda.RetornaAgendamento(txtPesquisar.Text);
+
+            dgv.AutoResizeColumns();
+            dgv.Columns[0].HeaderText = ("CÓDIGO");
+            dgv.Columns[1].HeaderText = ("PACIENTE");
+            dgv.Columns[2].HeaderText = ("FUNCIONÁRIO");
+            dgv.Columns[3].HeaderText = ("SERVIÇO");
+            dgv.Columns[4].HeaderText = ("DATA");
+            dgv.Columns[5].HeaderText = ("HORA");
+            dgv.Columns[6].HeaderText = ("STATUS");
+
+            if (dgv.RowCount == 0)
+            {
+             
+                btnAlterar.Enabled = false;
+                btnCancelar.Enabled = false;
+                MessageBox.Show("NÃO FORAM ENCONTRADOS DADOS COM A INFORMAÇÃO " + txtPesquisar.Text, "Verificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgv.DataSource = null;
+                txtPesquisar.Text = "";
+                txtPesquisar.Focus();
+            }
+            else
+            {
+                btnAlterar.Enabled = true;
+                btnCancelar.Enabled = true;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Deseja excluir o Agendamento: " + Convert.ToString(dgv.CurrentRow.Cells[0].Value + "?"),
+                        "E X C L U S Ã O", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (DialogResult.Yes == resultado)
+            {
+                ObjAgenda.Registro = dgv.CurrentRow.Cells[0].Value.ToString();
+                ObjAgenda.ExcluirLogicamente();
+                MessageBox.Show("Paciente Excluido com Sucesso", "E X C L U S Ã O", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Operação cancelada ", "cancelamento E X C L U S Ã O", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            CarregaDataGrid();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            frmAgenda alt = new frmAgenda();
+            alt.Text = ">>> ALTERAR <<<";
+            alt.txtPesClien.Enabled = false;
+            alt.comboBox2.Enabled = false;
+            alt.comboBox1.Enabled = false;
+            alt.cboStatus.Enabled = false;
+            alt.txtPesClien.Focus();
+            alt.ShowDialog();
+            CarregaDataGrid();
+        }
+
+        private void btnPesquisar_Click_1(object sender, EventArgs e)
         {
             CarregaDataGrid();
         }
-        public void CarregaDataGrid()
-        {
-            dgv.DataSource = ObjAgenda.RetornaAgendamento();
-            dgv.Columns[0].Visible = false;
-            dgv.Columns[1].Visible = false;
-            dgv.Columns[4].Visible = false;
-            dgv.Columns[7].Visible = false;
 
-            dgv.Columns[2].HeaderText = "Nome do Paciente  ";
-            //dgv.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv.Columns[3].HeaderText = "Celular do Paciente  ";
-            //dgv.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv.Columns[5].HeaderText = "Nome do Serviço  ";
-            //dgv.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv.Columns[6].HeaderText = "Tempo de Atendimento  ";
-            //dgv.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv.Columns[8].HeaderText = "Nome de Dentista  ";
-            //dgv.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv.Columns[9].HeaderText = "Data de Inicio  ";
-            //dgv.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv.Columns[10].HeaderText = "Data de Fim  ";
-            //dgv.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        private void frmConsultarAgendamento_Load(object sender, EventArgs e)
+        {
+           
+            btnCancelar.Enabled = false;
+            btnAlterar.Enabled = false;
+            dgv.RowHeadersVisible = false;
         }
     }
 }
+

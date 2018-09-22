@@ -1,7 +1,13 @@
 ﻿using SosDentes.BD;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using static System.Convert;
 
 
 namespace SosDentes
@@ -27,7 +33,7 @@ namespace SosDentes
 
         public DataTable PreencherTipoServico()
         {
-            comando = "Select id_servico, Des_servico, Tempo_Atendimento from Tipo_Servico";
+            comando = "Select id_servico, Des_servico from Tipo_Servico";
             return ObjbancoDados.RetornaTabela(comando);
         }
 
@@ -47,6 +53,20 @@ namespace SosDentes
             comando = "SELECT * FROM [dbo].[CepFiltradas$] WHERE CEP= '" + cep + "'";
             return ObjbancoDados.RetornaLinha(comando);
         }
+
+        public DataTable PreencherEspecialidade()
+        {
+            DataTable data = new DataTable();
+            data.Columns.Add("id_servico", typeof(int));
+            data.Columns.Add("Des_servico", typeof(string));
+            data.Rows.Add(1, "Restauração");
+            data.Rows.Add(2, "Limpeza");
+            data.Rows.Add(3, "Extração");
+            data.Rows.Add(4, "Canal");
+
+            return data;
+        }
+
         public static bool validarRegEx(string email)
         {
 
@@ -59,7 +79,7 @@ namespace SosDentes
             return false;
         }
 
-        public  static bool ValidaCpf( string Cpf)
+        public static bool ValidaCpf(string Cpf)
         {
 
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -118,6 +138,6 @@ namespace SosDentes
 
             digito = digito + resto.ToString();
             return Cpf.EndsWith(digito);
-        } 
+        }
     }
 }

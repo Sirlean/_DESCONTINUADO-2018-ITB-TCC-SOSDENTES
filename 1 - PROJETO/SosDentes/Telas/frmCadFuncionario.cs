@@ -159,6 +159,22 @@ namespace SosDentes.Telas
                 }
             }
         }
+
+        private void maskedTextBoxCpf_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                if (clnUtil.ValidaCpf(maskedTextBoxCpf.Text) == false)
+                {
+                    MessageBox.Show("CPF INVÁLIDO DIGITE NOVAMENTE", "Erro Inesperado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("CPF INFORMADO É VÁLIDO! POR FAVOR, CONTINUE O CADASTRO!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }
 

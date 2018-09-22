@@ -1,0 +1,13 @@
+ASSUNTO REDES SEM FIO 
+
+1- WPAN
+Redes sem fio pessoais ou curta distância, que se conectam dispositivos próximos entre si e as duas tecnologia são: o Bluetooth e HomeRF.
+
+2- WLAN
+Redes locais sem fio, que interliga computadores e equipamentos em uma rede local, como por exemplo, áreas de negócio de uma empresa e as duas tecnologia são: o Wi-FI e HiperLan.
+
+3- WMAN
+Redes sem fio metropolitanas, que interliga diversas redes locais geograficamente próximas e as duas tecnologia são: Wimax e para conectar campus de uma universidade 
+
+4-WWAN
+Redes sem fio geograficamente distribuídas ou de longa distância, ou seja, que abrange uma grande área geográfica entre países e continentes e as duas tecnologia são: GSM, GPRS e UMTS (3G).
